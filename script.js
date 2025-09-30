@@ -393,12 +393,28 @@ class PresentationManager {
         
         qaToggle.addEventListener('click', () => {
             qaPanel.classList.toggle('open');
+            
+            // Update button text based on state
+            if (qaPanel.classList.contains('open')) {
+                qaToggle.textContent = 'Fermer';
+            } else {
+                qaToggle.textContent = 'Q&A';
+            }
         });
         
-        // Close panel when clicking outside
+        // Close panel when clicking outside (not on very small screens)
         document.addEventListener('click', (e) => {
             if (!qaPanel.contains(e.target) && !qaToggle.contains(e.target)) {
                 qaPanel.classList.remove('open');
+                qaToggle.textContent = 'Q&A';
+            }
+        });
+        
+        // Close with escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && qaPanel.classList.contains('open')) {
+                qaPanel.classList.remove('open');
+                qaToggle.textContent = 'Q&A';
             }
         });
     }
