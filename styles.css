@@ -290,8 +290,53 @@ header {
     backdrop-filter: blur(10px);
 }
 
-.presentation-container:hover .speaker-notes {
-    transform: translateY(0);
+@media (hover: hover) and (pointer: fine) {
+    .presentation-container:hover .speaker-notes {
+        transform: translateY(0);
+    }
+}
+
+/* Touch devices - always show notes on tap/touch */
+@media (hover: none) or (pointer: coarse) {
+    .speaker-notes {
+        transform: translateY(0);
+        bottom: 90px;
+        max-height: 20vh; /* Reduced to avoid conflicts */
+        left: 140px; /* Space for Q&A button on left */
+        right: 140px; /* Space for speaker toggle on right */
+        padding: 0.6rem 0.8rem;
+        font-size: 0.75rem;
+        z-index: 150; /* Lower than Q&A button */
+        border-radius: 10px 10px 0 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .speaker-notes.hidden {
+        transform: translateY(100%);
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .speaker-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--primary-purple);
+        color: var(--white);
+        border: none;
+        padding: 0.8rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .speaker-toggle:active {
+        transform: scale(0.95);
+    }
 }
 
 /* When Q&A panel is closed, speaker notes can use full width */
@@ -319,6 +364,8 @@ header {
     justify-content: space-between;
     align-items: center;
     border-top: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 300; /* Above everything */
+    position: relative;
 }
 
 .nav-btn {
@@ -619,8 +666,8 @@ header {
     .qa-toggle {
         position: fixed;
         bottom: 25px;
-        right: 25px;
-        left: auto;
+        left: 25px; /* Changed from right to left */
+        right: auto;
         top: auto;
         transform: none;
         writing-mode: initial;
@@ -729,8 +776,8 @@ header {
     .qa-toggle {
         position: fixed;
         bottom: 20px;
-        right: 20px;
-        left: auto;
+        left: 20px; /* Changed from right to left */
+        right: auto;
         top: auto;
         transform: none;
         writing-mode: initial;
@@ -873,8 +920,8 @@ header {
     .qa-toggle {
         position: fixed;
         bottom: 20px;
-        right: 20px;
-        left: auto;
+        left: 20px; /* Changed from right to left */
+        right: auto;
         top: auto;
         transform: none;
         writing-mode: initial;

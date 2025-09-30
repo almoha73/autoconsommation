@@ -417,6 +417,31 @@ class PresentationManager {
                 qaToggle.textContent = 'Q&A';
             }
         });
+        
+        // Add speaker notes toggle for mobile
+        this.setupSpeakerNotesToggle();
+    }
+    
+    setupSpeakerNotesToggle() {
+        // Only add toggle on mobile/touch devices
+        if (window.matchMedia('(hover: none) or (pointer: coarse)').matches) {
+            let speakerToggle = document.getElementById('speaker-toggle');
+            if (!speakerToggle) {
+                speakerToggle = document.createElement('button');
+                speakerToggle.id = 'speaker-toggle';
+                speakerToggle.className = 'speaker-toggle';
+                speakerToggle.textContent = 'Notes';
+                document.body.appendChild(speakerToggle);
+                
+                speakerToggle.addEventListener('click', () => {
+                    const speakerNotes = document.getElementById('speaker-notes-global');
+                    if (speakerNotes) {
+                        speakerNotes.classList.toggle('hidden');
+                        speakerToggle.textContent = speakerNotes.classList.contains('hidden') ? 'Notes' : 'Masquer';
+                    }
+                });
+            }
+        }
     }
 
     populateQAData() {
