@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation Autoconsommation Solaire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <header>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">18</span>
+            </div>
+        </header>
+
+        <main class="slides-container">
+            <!-- Slide 1 -->
+            <section class="slide active" data-slide="1">
+                <div class="slide-content">
+                    <h1 class="slide-title">Autoconsommation ?</h1>
+                    <div class="slide-illustration">
+                        <div class="house-solar">
+                            <div class="house"></div>
+                            <div class="solar-panels"></div>
+                            <div class="octopus">🐙</div>
+                            <div class="question-mark">?</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="slide" data-slide="2">
+                <div class="slide-content">
+                    <h1 class="slide-title">Autoconsommation Solaire : Produire Vert</h1>
+                    <div class="slide-points">
+                        <div class="point">
+                            <span class="icon">⚡</span>
+                            <span>Produire et consommer sa propre électricité</span>
+                        </div>
+                        <div class="point">
+                            <span class="icon">💰</span>
+                            <span>Réduire la facture d'énergie</span>
+                        </div>
+                        <div class="point">
+                            <span class="icon">🌱</span>
+                            <span>Contribuer à un avenir énergétique durable</span>
+                        </div>
+                        <div class="point">
+                            <span class="icon">🏡</span>
+                            <span>Devenir autonome grâce au soleil</span>
+                        </div>
+                    </div>
+                    <div class="slide-illustration">
+                        <div class="sunny-house"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="slide" data-slide="3">
+                <div class="slide-content">
+                    <h1 class="slide-title">Comprendre l'Autoconsommation</h1>
+                    <div class="slide-points">
+                        <div class="point">
+                            <span class="icon">☀️</span>
+                            <span>Le soleil permet de produire de l'électricité verte via les panneaux</span>
+                        </div>
+                        <div class="point">
+                            <span class="icon">🏠</span>
+                            <span>La maison consomme l'énergie produite directement</span>
+                        </div>
+                        <div class="point">
+                            <span class="icon">🔌</span>
+                            <span>Le réseau public complète si besoin est</span>
+                        </div>
+                        <div class="point">
+                            <span class="icon">👤</span>
+                            <span>On devient un consommateur et acteur d'énergie</span>
+                        </div>
+                    </div>
+                    <div class="slide-illustration">
+                        <div class="energy-flow"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="slide" data-slide="4">
+                <div class="slide-content">
+                    <h1 class="slide-title">Avantages de l'Autoconsommation Solaire</h1>
+                    <div class="slide-points">
+                        <div class="point">
+                            <span class="icon">📉</span>
+                            <span>Réduire la facture d'électricité de moitié</span>
+                        </div>
+                        <div class="point">
+                            <span class="icon">🔋</span>
+                            <span>Gagner en indépendance énergétique - revendre</span>
+                        </div>
+                        <div class="point">
+                            <span class="icon">🌍</span>
+                            <span>Contribuer à un avenir plus durable et écologique</span>
+                        </div>
+                        <div class="point">
+                            <span class="icon">🏘️</span>
+                            <span>Augmenter la valeur de votre bien immobilier</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5 -->
+            <section class="slide" data-slide="5">
+                <div class="slide-content">
+                    <h1 class="slide-title">Taux d'autoconsommation et d'autoproduction</h1>
+                    <div class="metrics-container">
+                        <div class="metric">
+                            <h3>Taux d'autoconsommation</h3>
+                            <div class="metric-visual">
+                                <div class="gauge" data-percentage="30">
+                                    <div class="gauge-fill"></div>
+                                    <span class="gauge-text">30%</span>
+                                </div>
+                            </div>
+                            <p>Ce que je consomme vraiment depuis mes panneaux<br>
+                            <em>Ex: j'ai consommé 30 kWh sur 100 kWh produits</em></p>
+                        </div>
+                        <div class="metric">
+                            <h3>Taux d'autoproduction</h3>
+                            <div class="metric-visual">
+                                <div class="gauge" data-percentage="20">
+                                    <div class="gauge-fill"></div>
+                                    <span class="gauge-text">20%</span>
+                                </div>
+                            </div>
+                            <p>Niveau de dépendance au réseau<br>
+                            <em>Ex: je m'approvisionne encore à 80% auprès de mon fournisseur</em></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Continue with remaining slides... -->
+            <!-- I'll create a simplified version and then continue with the full implementation -->
+
+        </main>
+
+        <nav class="slide-navigation">
+            <button id="prev-btn" class="nav-btn">Précédent</button>
+            <div class="slide-dots" id="slide-dots"></div>
+            <button id="next-btn" class="nav-btn">Suivant</button>
+        </nav>
+
+        <div class="qa-panel" id="qa-panel">
+            <button class="qa-toggle" id="qa-toggle">Q&A</button>
+            <div class="qa-content" id="qa-content">
+                <!-- Q&A content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
