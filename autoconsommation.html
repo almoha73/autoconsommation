@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Autoconsommation solaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-pattern {
+            background-image: linear-gradient(to right, rgba(24, 0, 72, 0.8), rgba(46, 28, 132, 0.8)), url('https://placehold.co/1200x800/2de0c4/180048?text=Energie+Solaire');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-[#180048] text-slate-300">
+
+    <!-- Header & Hero Section -->
+    <header class="hero-pattern text-white shadow-lg">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-[#f050f8]">L’Autoconsommation Solaire</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+
+            <!-- Sticky Table of Contents -->
+            <aside class="lg:col-span-1 lg:sticky top-12 self-start">
+                <div class="bg-[#2e1c84] rounded-xl p-6 shadow-md">
+                    <h3 class="text-xl font-bold text-white mb-4 border-b border-[#180048] pb-2">Table des matières</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#resume" class="hover:text-[#2de0c4] transition-colors duration-300">1. Résumé Exécutif</a></li>
+                        <li><a href="#intro" class="hover:text-[#2de0c4] transition-colors duration-300">2. Introduction</a></li>
+                        <li><a href="#chap1" class="hover:text-[#2de0c4] transition-colors duration-300">3. Qu’est-ce que l’autoconsommation ?</a></li>
+                        <li><a href="#chap2" class="hover:text-[#2de0c4] transition-colors duration-300">4. Principes et fonctionnement</a></li>
+                        <li><a href="#chap3" class="hover:text-[#2de0c4] transition-colors duration-300">5. Avantages économiques</a></li>
+                        <li><a href="#chap4" class="hover:text-[#2de0c4] transition-colors duration-300">6. Taux d'autoconsommation</a></li>
+                        <li><a href="#chap5" class="hover:text-[#2de0c4] transition-colors duration-300">7. Valorisation du surplus</a></li>
+                        <li><a href="#chap_collectif" class="hover:text-[#2de0c4] transition-colors duration-300">8. L'Autoconsommation Collective</a></li>
+                        <li><a href="#chap6" class="hover:text-[#2de0c4] transition-colors duration-300">9. Cadre administratif</a></li>
+                        <li><a href="#chap7" class="hover:text-[#2de0c4] transition-colors duration-300">10. Aides et fiscalité</a></li>
+                        <li><a href="#conclusion" class="hover:text-[#2de0c4] transition-colors duration-300">11. Conclusion</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Content Sections -->
+            <div class="lg:col-span-3 space-y-12">
+
+                <section id="resume" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">1.</span>
+                        <span class="flex-1 min-w-0">Résumé Exécutif</span>
+                    </h2>
+                    <p class="text-lg leading-relaxed">L’autoconsommation solaire s’impose en 2025 comme un pilier de la transition énergétique française. Face à la volatilité des prix de l'énergie et à l'urgence climatique, ce modèle permet aux citoyens et aux entreprises de devenir des acteurs de leur propre production d’énergie. Ce document étudie les fondements de ce modèle, son fonctionnement technique, ses bénéfices économiques et environnementaux, son cadre administratif et fiscal, ainsi que les perspectives d’évolution à l’horizon 2030. En combinant progrès technologiques (panneaux à haut rendement, EMS intelligents) et un cadre réglementaire simplifié, produire et consommer sa propre électricité est devenu une réalité accessible et rentable.</p>
+                </section>
+
+                <section id="intro" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">2.</span>
+                        <span class="flex-1 min-w-0">Introduction : La Révolution Énergétique est en Marche</span>
+                    </h2>
+                    <p class="mb-4 leading-relaxed">Depuis plusieurs années, la France s’engage dans une transformation profonde de son modèle énergétique. L’autoconsommation solaire apparaît comme une réponse majeure à ces enjeux, en combinant <strong class="text-[#2de0c4]">autonomie</strong>, <strong class="text-[#2de0c4]">responsabilité</strong> et <strong class="text-[#2de0c4]">innovation</strong>.</p>
+                    <p class="font-semibold text-white mb-2">En 2025, ce modèle connaît une accélération remarquable, portée par trois facteurs :</p>
+                    <ul class="list-disc list-inside space-y-2 pl-4">
+                        <li>La baisse continue des coûts des panneaux photovoltaïques (plus de 70 % depuis 2010).</li>
+                        <li>Le renforcement des aides publiques et incitations fiscales.</li>
+                        <li>L'émergence de technologies connectées (EMS, stockage, IA) qui rendent la gestion énergétique plus efficace que jamais.</li>
+                    </ul>
+                </section>
+
+                <section id="chap1" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">3.</span>
+                        <span class="flex-1 min-w-0">Qu’est-ce que l’autoconsommation solaire ?</span>
+                    </h2>
+                    <p class="mb-6 leading-relaxed">C'est le principe selon lequel un foyer ou une entreprise produit de l’électricité à partir de panneaux photovoltaïques et consomme cette énergie directement sur place. Le producteur devient alors aussi consommateur (un <strong class="text-[#2de0c4]">prosumer</strong>, mot-valise pour producteur-consommateur) et réduit ainsi drastiquement ses achats auprès du réseau électrique national.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">3.1. Les deux modes principaux</h3>
+                            <ul class="list-disc list-inside space-y-1 pl-4">
+                                <li><strong>Autoconsommation totale</strong> : Toute l’électricité produite est consommée sur place.</li>
+                                <li><strong>Autoconsommation partielle</strong> : Le surplus est injecté sur le réseau ou stocké.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">3.2. Les objectifs</h3>
+                            <ul class="list-disc list-inside space-y-1 pl-4">
+                                <li>Réduire les factures d’électricité.</li>
+                                <li>Participer à la transition énergétique.</li>
+                                <li>Gagner en autonomie énergétique.</li>
+                                <li>Stabiliser la demande sur le réseau.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="chap2" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">4.</span>
+                        <span class="flex-1 min-w-0">Principes et fonctionnement</span>
+                    </h2>
+                     <p class="mb-4 leading-relaxed">Les panneaux solaires photovoltaïques transforment la lumière du soleil en électricité (courant continu) grâce à l’effet photoélectrique. Cette électricité est ensuite convertie en courant alternatif par un onduleur pour être compatible avec les appareils domestiques. Le rendement moyen des panneaux actuels est de 20 à 22 %, avec des technologies de pointe dépassant 23 %.</p>
+                     <h3 class="text-xl font-semibold text-white mb-2">4.1. Le rôle du Système de Gestion Énergétique (EMS)</h3>
+                     <p class="leading-relaxed">Le système de gestion énergétique (EMS) est le cerveau de l’installation. Ce boîtier électronique connecté optimise en continu la consommation pour maximiser l'autoconsommation. Il collecte les données de production, de consommation (via le compteur Linky), les prévisions météo et les habitudes du foyer pour piloter automatiquement les appareils énergivores (chauffe-eau, lave-linge, recharge de véhicule électrique) aux moments les plus opportuns.</p>
+                </section>
+                
+                <section id="chap3" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">5.</span>
+                        <span class="flex-1 min-w-0">Avantages économiques et environnementaux</span>
+                    </h2>
+                    <div class="space-y-4">
+                         <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">5.1. Une solution rentable</h3>
+                            <p>Une installation de 3 kWc (kilowatt-crête) coûte entre 8 000 et 12 000 €. Avec les aides, le coût net est souvent inférieur à 7 000 €. <strong class="text-[#2de0c4]">Le retour sur investissement s’obtient en 7 à 10 ans</strong>, pour une durée de vie de plus de 25 ans.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">5.2. Des bénéfices écologiques concrets</h3>
+                            <p>Une installation de 3 kWc évite l'émission de plus de 25 tonnes de CO₂ sur 25 ans. Les panneaux modernes sont recyclables à 95 %.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">5.3. Valorisation immobilière</h3>
+                            <p>Les logements équipés gagnent 3 à 5 % de valeur et bénéficient d’une meilleure étiquette énergétique (DPE).</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="chap4" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">6.</span>
+                        <span class="flex-1 min-w-0">Comprendre les taux d'autoconsommation et d'autoproduction</span>
+                    </h2>
+                    <p class="mb-8 leading-relaxed text-lg">
+                        Ces deux termes sont la clé pour comprendre la rentabilité et l'efficacité de votre installation. Bien qu'ils semblent similaires, ils mesurent deux choses très différentes. Prenons un **exemple chiffré sur une journée** pour clarifier définitivement leur distinction.
+                    </p>
+
+                    <div class="bg-[#180048]/50 border border-[#2e1c84] p-6 rounded-lg mb-8">
+                        <h3 class="text-xl font-semibold text-white mb-4 text-center">Les chiffres de notre journée exemple</h3>
+                        <div class="flex flex-col md:flex-row gap-4 text-center">
+                            <div class="flex-1 bg-[#180048] p-4 rounded-lg">
+                                <p class="text-sm text-slate-400">Production Solaire Totale</p>
+                                <p class="text-3xl font-bold text-[#2de0c4]">10 kWh</p>
+                                <p class="text-xs italic">(Ce que les panneaux ont créé)</p>
+                            </div>
+                            <div class="flex-1 bg-[#180048] p-4 rounded-lg">
+                                <p class="text-sm text-slate-400">Consommation Totale de la Maison</p>
+                                <p class="text-3xl font-bold text-[#f050f8]">15 kWh</p>
+                                <p class="text-xs italic">(Ce que la maison a utilisé sur 24h)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-[#2e1c84] pt-8 mt-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 text-center">Bilan : Le Calcul des Deux Taux</h3>
+                        <p class="text-center mb-8 max-w-2xl mx-auto">Sur les 10 kWh produits au total, imaginons que vous ayez consommé <strong class="text-[#2de0c4]">6 kWh</strong> directement au moment où ils étaient produits. Les 4 kWh restants sont partis en surplus. C'est ce chiffre de <strong class="text-[#2de0c4]">6 kWh</strong> qui est la clé de tout.</p>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-[#180048]/50 p-6 rounded-lg border-l-4 border-[#2de0c4] flex flex-col">
+                                <h4 class="text-xl font-bold text-[#2de0c4]">1. Taux d'Autoconsommation</h4>
+                                <p class="text-sm italic text-slate-400 mb-4">On se concentre sur la <strong class="text-white">production</strong>.</p>
+                                <p class="mb-4 flex-grow">"Sur les <strong class="text-white">10 kWh</strong> que j'ai produits, quelle part ai-je utilisée ?"</p>
+                                <div class="bg-[#180048] text-center p-4 rounded-lg">
+                                    <p class="text-lg"> (6 kWh utilisés / 10 kWh produits) = </p>
+                                    <p class="text-4xl font-extrabold text-[#2de0c4]">60%</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#180048]/50 p-6 rounded-lg border-l-4 border-[#f050f8] flex flex-col">
+                                <h4 class="text-xl font-bold text-[#f050f8]">2. Taux d'Autoproduction (Autonomie)</h4>
+                                <p class="text-sm italic text-slate-400 mb-4">On se concentre sur la <strong class="text-white">consommation</strong>.</p>
+                                <p class="mb-4 flex-grow">"Sur les <strong class="text-white">15 kWh</strong> dont j'avais besoin, quelle part vient de mes panneaux ?"</p>
+                                <div class="bg-[#180048] text-center p-4 rounded-lg">
+                                    <p class="text-lg">(6 kWh fournis / 15 kWh de besoin) = </p>
+                                    <p class="text-4xl font-extrabold text-[#f050f8]">40%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 bg-[#180048] p-6 rounded-lg text-center border border-[#2e1c84]">
+                        <h4 class="text-xl font-semibold text-white">En Résumé : La Différence Clé</h4>
+                        <p class="mt-2 text-lg leading-relaxed">Le taux d'<strong>autoconsommation</strong> mesure votre capacité à <strong class="text-[#2de0c4]">utiliser efficacement votre production</strong>, tandis que le taux d'<strong>autoproduction</strong> mesure votre niveau d'<strong class="text-[#f050f8]">indépendance par rapport au réseau</strong>.</p>
+                    </div>
+                </section>
+                
+                <section id="chap5" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">7.</span>
+                        <span class="flex-1 min-w-0">Valorisation du surplus et stockage énergétique</span>
+                    </h2>
+                    <p class="mb-4">Lorsqu’un foyer produit plus qu’il ne consomme, le surplus peut être géré de trois manières :</p>
+                    <ol class="list-decimal list-inside space-y-3 pl-4">
+                        <li><strong>Revendu</strong> à EDF OA à 0,04 €/kWh, avec un contrat garanti 20 ans (Convention CRAE).</li>
+                        <li><strong>Stocké</strong> dans une batterie pour une utilisation nocturne, permettant d'atteindre jusqu’à 80 % d’autonomie.</li>
+                        <li><strong>Réinjecté gratuitement sur le réseau</strong> : Concerne les installations sous Convention d’Autoconsommation Sans Injection (CACSI). Enedis tolère une injection minime et accidentelle.</li>
+                    </ol>
+                </section>
+                
+                <section id="chap_collectif" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">8.</span>
+                        <span class="flex-1 min-w-0">L'Autoconsommation Collective : Partager l'Énergie Solaire</span>
+                    </h2>
+                    <p class="mb-6 leading-relaxed text-lg">
+                        L'autoconsommation collective (ACC) permet à un groupe de producteurs et de consommateurs de se partager l'électricité produite localement. Deux principaux modèles existent, rendant le concept flexible et adaptable.
+                    </p>
+
+                    <div class="mb-12">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-6 text-center">Modèle 1 ou Modèle 2 : Comment s'organise le groupe ?</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Schéma stylisé 1 -->
+                            <div class="bg-[#180048]/50 border border-[#2e1c84] p-6 rounded-lg text-center flex flex-col">
+                                <h4 class="text-xl font-semibold text-[#a166ed] mb-4">Scénario 1 : Le "Soleil Central"</h4>
+                                <div class="flex-grow flex flex-col items-center justify-center">
+                                    <svg class="h-16 w-16 text-[#a166ed]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
+                                    <div class="text-4xl my-2 text-slate-500">&rarr;</div>
+                                    <div class="flex gap-2">
+                                        <svg class="h-10 w-10 text-[#2de0c4]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+                                        <svg class="h-10 w-10 text-[#2de0c4]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+                                    </div>
+                                </div>
+                                <p class="mt-4 text-sm text-slate-300">Une seule grande installation produit pour de nombreux consommateurs.</p>
+                            </div>
+                            <!-- Schéma stylisé 2 -->
+                            <div class="bg-[#180048]/50 border border-[#2e1c84] p-6 rounded-lg text-center flex flex-col">
+                                <h4 class="text-xl font-semibold text-[#a166ed] mb-4">Scénario 2 : Le "Village Solaire"</h4>
+                                <div class="flex-grow flex items-center justify-center">
+                                    <div class="flex items-center gap-2">
+                                        <svg class="h-10 w-10 text-[#a166ed]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+                                        <svg class="h-10 w-10 text-[#a166ed]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+                                        <div class="text-2xl mx-2 text-slate-500">&harr;</div>
+                                        <svg class="h-10 w-10 text-[#2de0c4]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+                                    </div>
+                                </div>
+                                <p class="mt-4 text-sm text-slate-300">Plusieurs maisons produisent et mutualisent leurs surplus pour tout le groupe.</p>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-center text-slate-400 italic">Quel que soit le modèle, tous les participants doivent appartenir à une entité légale unique : la <strong class="text-white">Personne Morale Organisatrice (PMO)</strong>.</p>
+                    </div>
+
+                    <div class="border-t border-[#180048] pt-10">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-8 text-center">Fonctionnement Technique : L'Alliance du Physique et du Numérique</h3>
+                        <div class="space-y-6 mt-6">
+                            <div class="bg-[#180048]/50 p-6 rounded-lg flex items-start gap-4">
+                                <div class="flex-shrink-0 bg-[#2de0c4] text-[#180048] w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">1</div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Le Flux Physique des Électrons</h4>
+                                    <p class="text-slate-300 mt-1">Le surplus d'électricité est injecté sur le réseau public et, par les lois de la physique, consommé par les bâtiments les plus proches, qu'ils soient membres du groupe ou non. Le réseau agit comme un grand "lac" d'énergie commun.</p>
+                                </div>
+                            </div>
+                            <div class="bg-[#180048]/50 p-6 rounded-lg flex items-start gap-4">
+                                <div class="flex-shrink-0 bg-[#2de0c4] text-[#180048] w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">2</div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Le Flux des Données (La Répartition Virtuelle)</h4>
+                                    <p class="text-slate-300 mt-1">C'est ici que la magie opère. Toutes les 30 minutes, les <strong class="text-[#a166ed]">compteurs Linky</strong> de chaque membre mesurent production et consommation. Enedis centralise ces données et "attribue" virtuellement la production locale aux consommateurs du groupe, selon la clé de répartition définie par la PMO.</p>
+                                </div>
+                            </div>
+                            <div class="bg-[#180048]/50 p-6 rounded-lg flex items-start gap-4">
+                                <div class="flex-shrink-0 bg-[#2de0c4] text-[#180048] w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">3</div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Le Résultat sur la Facture</h4>
+                                    <p class="text-slate-300 mt-1">La part d'énergie qui vous est attribuée virtuellement n'est pas facturée par votre fournisseur habituel. Vous la payez directement à votre PMO, à un tarif local et avantageux. C'est le bénéfice financier direct de l'opération.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="chap6" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">9.</span>
+                        <span class="flex-1 min-w-0">Cadre administratif et réglementaire</span>
+                    </h2>
+                    <p class="mb-4">Le parcours administratif varie selon le type de projet :</p>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Pour l'autoconsommation individuelle :</h3>
+                            <ol class="list-decimal list-inside space-y-2 pl-4">
+                                <li><strong>Déclaration préalable de travaux (DP)</strong> à déposer en mairie.</li>
+                                <li><strong>Raccordement Enedis</strong> via une convention en ligne (CACSI ou CRAE).</li>
+                                <li><strong>Contrôle du Consuel</strong> pour certifier la conformité.</li>
+                            </ol>
+                        </div>
+                        <div class="bg-[#180048]/50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-white mb-2">Pour l'autoconsommation collective :</h3>
+                            <p class="mb-2">Le processus est géré par la PMO et est plus complexe :</p>
+                            <ol class="list-decimal list-inside space-y-2 pl-4">
+                                <li>Création de la <strong class="text-[#2de0c4]">Personne Morale Organisatrice (PMO)</strong>.</li>
+                                <li>Signature d'une <strong class="text-[#f050f8]">"Convention d'Autoconsommation Collective"</strong> avec Enedis, détaillant les membres et la clé de répartition.</li>
+                                <li>Chaque installation de production suit ensuite sa propre procédure de raccordement et de contrôle Consuel.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-[#180048]">
+                         <h3 class="text-xl font-semibold text-white mb-4">Focus : Le rôle clé du Consuel</h3>
+                         <div class="bg-[#180048]/50 p-6 rounded-lg">
+                            <p class="mb-3">Le <strong class="text-[#2de0c4]">Consuel</strong> (Comité National pour la Sécurité des Usagers de l'Électricité) est un organisme indépendant dont la mission est de viser les installations électriques neuves ou rénovées. Son intervention est une étape <strong class="text-[#f050f8]">obligatoire et non-négociable</strong> pour toute installation photovoltaïque raccordée au réseau.</p>
+                         </div>
+                    </div>
+                </section>
+
+                <section id="chap7" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">10.</span>
+                        <span class="flex-1 min-w-0">Aides financières, fiscalité et incitations 2025</span>
+                    </h2>
+                    <h3 class="text-xl font-semibold text-white mb-4">10.1. Prime et tarifs d’achat</h3>
+                     <ul class="list-disc list-inside space-y-2 pl-4 mb-8">
+                        <li><strong>Prime à l’autoconsommation</strong> : 80 €/kWc pour ≤ 9 kWc.</li>
+                        <li><strong>Tarif d’achat</strong> : 0,04 €/kWh pour le surplus revendu (CRAE uniquement).</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold text-white mb-4">10.2. Les taux de TVA applicables : le guide complet</h3>
+                    <p class="mb-6">Le recours à un installateur certifié <strong>RGE (Reconnu Garant de l'Environnement)</strong> est indispensable pour accéder aux taux réduits.</p>
+                    <div class="space-y-6">
+                        <div class="bg-[#180048]/50 p-6 rounded-lg border-l-4 border-[#f050f8]">
+                            <h4 class="text-2xl font-bold text-[#f050f8]">TVA à 20 % <span class="text-base font-normal text-slate-300">(Taux normal)</span></h4>
+                            <p class="mt-2">C'est le taux par défaut. Il s'applique pour :</p>
+                            <ul class="list-disc list-inside space-y-1 mt-2 pl-4">
+                                <li>Les logements neufs (- de 2 ans).</li>
+                                <li>Les installations de plus de 9 kWc.</li>
+                                <li>Les installations sans artisan certifié RGE.</li>
+                                <li>Toute installation ne remplissant pas les critères pour les taux à 10 % ou 5,5 %.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-[#180048]/50 p-6 rounded-lg border-l-4 border-[#a166ed]">
+                            <h4 class="text-2xl font-bold text-[#a166ed]">TVA à 10 % <span class="text-base font-normal text-slate-300">(Taux intermédiaire)</span></h4>
+                            <p class="mt-2">Ce taux est maintenu pour les petites installations non éligibles au taux à 5,5 %, sous conditions :</p>
+                             <ul class="list-disc list-inside space-y-1 mt-2 pl-4">
+                                <li>Puissance ≤ 3 kWc.</li>
+                                <li>Logement de plus de 2 ans.</li>
+                                <li>Installateur certifié RGE.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-[#180048]/50 p-6 rounded-lg border-l-4 border-[#2de0c4]">
+                            <h4 class="text-2xl font-bold text-[#2de0c4]">TVA à 5,5 % <span class="text-base font-normal text-slate-300">(Taux super-réduit)</span></h4>
+                            <p class="mt-2">Le taux le plus incitatif, mais soumis à des conditions techniques strictes :</p>
+                             <ul class="list-disc list-inside space-y-1 mt-2 pl-4">
+                                <li>Puissance ≤ 9 kWc et logement de + de 2 ans.</li>
+                                <li>Installateur certifié RGE.</li>
+                                <li>Matériel à faible empreinte carbone.</li>
+                                <li>Intégration d'un système de gestion de l'énergie (EMS).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- NOUVELLE SECTION SUR LES IMPÔTS -->
+                    <h3 class="text-xl font-semibold text-white mt-12 mb-4 pt-8 border-t border-[#180048]">10.3. Fiscalité : Impôt sur le revenu (IR)</h3>
+                    <p class="mb-6">La déclaration des revenus issus de la vente de votre surplus d'électricité dépend de la puissance de votre installation.</p>
+                    <div class="space-y-6">
+                        <div class="bg-[#180048]/50 p-6 rounded-lg border-l-4 border-[#2de0c4]">
+                            <h4 class="text-2xl font-bold text-[#2de0c4]">Cas 1 : Exonération Totale (Le plus courant)</h4>
+                            <p class="mt-2">Vous êtes <strong class="text-white">totalement exonéré d'impôt sur le revenu</strong> (et de prélèvements sociaux) si vous remplissez les 3 conditions suivantes :</p>
+                            <ul class="list-disc list-inside space-y-1 mt-2 pl-4">
+                                <li>Votre installation a une puissance inférieure ou égale à <strong>3 kWc</strong>.</li>
+                                <li>Elle est raccordée au réseau public en 2 points maximum (cas standard).</li>
+                                <li>Vous n'exploitez pas l'installation dans le cadre d'une activité professionnelle.</li>
+                            </ul>
+                            <p class="mt-3 italic text-slate-400">Dans ce cas, vous n'avez <strong class="text-white">rien à déclarer</strong> aux impôts concernant ces revenus.</p>
+                        </div>
+                        <div class="bg-[#180048]/50 p-6 rounded-lg border-l-4 border-[#f050f8]">
+                            <h4 class="text-2xl font-bold text-[#f050f8]">Cas 2 : Imposition (Puissance > 3 kWc)</h4>
+                            <p class="mt-2">Si la puissance de votre installation <strong class="text-white">dépasse 3 kWc</strong>, les revenus de la vente sont imposables et doivent être déclarés.</p>
+                             <ul class="list-disc list-inside space-y-1 mt-2 pl-4">
+                                <li>Les revenus sont considérés comme des Bénéfices Industriels et Commerciaux (BIC).</li>
+                                <li>Vous devez les déclarer dans votre déclaration de revenus complémentaire (formulaire 2042 C Pro).</li>
+                                <li>Le plus simple est d'opter pour le <strong class="text-white">régime micro-BIC</strong>, qui vous donne droit à un abattement forfaitaire de 71% (seuls 29% des revenus sont ajoutés à votre revenu imposable).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- FIN DE LA NOUVELLE SECTION -->
+
+                </section>
+                
+                <section id="conclusion" class="bg-[#2e1c84] p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-start">
+                        <span class="text-[#a166ed] mr-4 flex-shrink-0">11.</span>
+                        <span class="flex-1 min-w-0">Conclusion Générale : Devenez Acteur de Votre Avenir Énergétique</span>
+                    </h2>
+                    <p class="text-lg leading-relaxed">L’autoconsommation solaire n’est plus une alternative, mais une évidence économique, écologique et citoyenne. Grâce à la baisse des coûts, aux aides publiques et aux innovations numériques, elle représente un pilier de la transition énergétique française. Produire son électricité, c’est agir concrètement pour un avenir durable et responsable.</p>
+                </section>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#180048] border-t border-[#2e1c84] mt-12">
+        <div class="container mx-auto px-6 py-6 text-center text-slate-400">
+            <p>&copy; 2025 Guide de l'Autoconsommation Solaire. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
