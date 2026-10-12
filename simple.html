@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoconsommation Solaire - Présentation</title>
+    <style>
+        /* Reset et base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #611bff, #ff6ceb);
+            color: #333;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container principal */
+        .presentation {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header simple */
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Zone des slides */
+        .slides-area {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* Slide unique */
+        .slide {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide h1 {
+            color: #611bff;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .slide-content {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .slide-points {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .point {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .point-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 2rem;
+        }
+
+        /* Navigation simple */
+        .navigation {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #00dd00, #ffdd00);
+            color: #333;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            color: white;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        /* Notes du présentateur */
+        .speaker-notes {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            max-height: 30vh;
+            overflow-y: auto;
+        }
+
+        .speaker-notes.show {
+            transform: translateY(0);
+        }
+
+        .notes-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff6ceb;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Questions/Réponses */
+        .qa-section {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            overflow-y: auto;
+            padding: 2rem;
+            z-index: 1000;
+        }
+
+        .qa-section.show {
+            right: 0;
+        }
+
+        .qa-toggle {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: #611bff;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .qa-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .qa-question {
+            font-weight: bold;
+            color: #611bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .qa-answer {
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 2rem 1.5rem;
+            }
+
+            .slide h1 {
+                font-size: 2rem;
+            }
+
+            .slide-content {
+                font-size: 1.1rem;
+            }
+
+            .qa-section {
+                width: 100%;
+                right: -100%;
+            }
+
+            .qa-toggle {
+                bottom: 80px;
+                right: 20px;
+                top: auto;
+                transform: none;
+            }
+
+            .notes-toggle {
+                bottom: 80px;
+                left: 20px;
+            }
+
+            .nav-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Header -->
+        <div class="header">
+            Présentation Autoconsommation Solaire
+        </div>
+
+        <!-- Zone des slides -->
+        <div class="slides-area">
+            <!-- Slide 1 -->
+            <div class="slide active" data-slide="1" data-speech="Bonjour et bienvenue ! Aujourd'hui, nous explorons l'autoconsommation solaire - une révolution énergétique à portée de toit. L'autoconsommation, c'est simplement produire et consommer sa propre énergie grâce au soleil.">
+                <h1>Autoconsommation ?</h1>
+                <div class="slide-content">
+                    <div style="font-size: 4rem; margin: 2rem 0;">🏠☀️🔋</div>
+                    <p>Transformer votre toit en mini-centrale électrique</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide" data-slide="2" data-speech="Voici les quatre piliers de l'autoconsommation solaire. Vous devenez producteur et consommateur. Vos économies peuvent atteindre 300 à 600 euros par an. C'est un investissement intelligent qui allie écologie et économie.">
+                <h1>Produire Vert</h1>
+                <div class="slide-points">
+                    <div class="point">
+                        <span class="point-icon">⚡</span>
+                        <span>Produire et consommer sa propre électricité</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">💰</span>
+                        <span>Réduire la facture d'énergie</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">🌱</span>
+                        <span>Contribuer à un avenir durable</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">🏡</span>
+                        <span>Devenir autonome grâce au soleil</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide" data-slide="3" data-speech="Le principe est d'une simplicité géniale. Vos panneaux captent la lumière et la transforment en électricité. Cette énergie alimente en priorité vos appareils. Le réseau électrique traditionnel prend automatiquement le relais si besoin.">
+                <h1>Comment ça marche ?</h1>
+                <div class="slide-points">
+                    <div class="point">
+                        <span class="point-icon">☀️</span>
+                        <span>Le soleil produit de l'électricité via les panneaux</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">🏠</span>
+                        <span>La maison consomme l'énergie directement</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">🔌</span>
+                        <span>Le réseau complète si besoin</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">👤</span>
+                        <span>Vous devenez producteur ET consommateur</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide" data-slide="4" data-speech="Les bénéfices sont multiples et concrets. Diviser votre facture par deux est une réalité. Une installation de 3 kWc évite l'émission de 1,5 tonne de CO2 par an. Votre bien immobilier gagne en attractivité.">
+                <h1>Les Avantages</h1>
+                <div class="slide-points">
+                    <div class="point">
+                        <span class="point-icon">📉</span>
+                        <span>Réduire la facture de 30 à 50%</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">🔋</span>
+                        <span>Gagner en indépendance énergétique</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">🌍</span>
+                        <span>Contribuer à un avenir écologique</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">🏘️</span>
+                        <span>Augmenter la valeur de votre bien</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide" data-slide="5" data-speech="Les aides de l'État rendent l'investissement très attractif. En 2025, prime de 80 euros par kWc, TVA réduite à 5,5%. Le retour sur investissement se situe entre 7 et 10 ans, puis 15 ans de profits.">
+                <h1>Aides 2025</h1>
+                <div class="slide-points">
+                    <div class="point">
+                        <span class="point-icon">🎯</span>
+                        <span>Prime : 80 €/kWc (240 € pour 3 kWc)</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">💳</span>
+                        <span>TVA réduite à 5,5% dès octobre 2025</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">📊</span>
+                        <span>Retour sur investissement : 7-10 ans</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">🏆</span>
+                        <span>Puis 15 ans d'électricité quasi-gratuite</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6 - Conclusion -->
+            <div class="slide" data-slide="6" data-speech="L'autoconsommation solaire n'est plus une utopie, c'est une réalité accessible et rentable. En 2025, toutes les conditions sont réunies. L'avenir appartient aux prosumers. Prêts à rejoindre la révolution solaire ?">
+                <h1>L'avenir est solaire !</h1>
+                <div class="slide-content">
+                    <div style="font-size: 3rem; margin: 2rem 0;">☀️🌱💰</div>
+                    <p style="font-size: 1.5rem; margin-bottom: 2rem;">
+                        <strong>7-10 ans</strong> de retour sur investissement<br>
+                        <strong>50%</strong> de réduction de facture<br>
+                        <strong>25 ans</strong> de garantie panneaux
+                    </p>
+                    <p style="color: #611bff; font-size: 1.3rem;">
+                        Des questions ? Contactez-nous pour un devis personnalisé !
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-btn" id="prev-btn">← Précédent</button>
+            <div class="slide-counter">
+                <span id="current">1</span> / <span id="total">6</span>
+            </div>
+            <button class="nav-btn" id="next-btn">Suivant →</button>
+        </div>
+    </div>
+
+    <!-- Notes du présentateur -->
+    <div class="speaker-notes" id="speaker-notes">
+        <h3>📝 Notes du présentateur</h3>
+        <p id="notes-content">Bonjour et bienvenue ! Cliquez sur les boutons pour naviguer.</p>
+    </div>
+
+    <!-- Bouton toggle notes -->
+    <button class="notes-toggle" id="notes-toggle" title="Afficher/Masquer les notes">📝</button>
+
+    <!-- Section Q&A -->
+    <div class="qa-section" id="qa-section">
+        <h2>Questions & Réponses</h2>
+        <div id="qa-content">
+            <!-- Sera rempli par JavaScript -->
+        </div>
+    </div>
+
+    <!-- Bouton toggle Q&A -->
+    <button class="qa-toggle" id="qa-toggle" title="Questions & Réponses">❓</button>
+
+    <script>
+        // Données des Q&A pour chaque slide
+        const qaData = {
+            1: [
+                {
+                    q: "Qu'est-ce que l'autoconsommation solaire ?",
+                    a: "C'est produire de l'électricité via des panneaux photovoltaïques et la consommer directement chez soi."
+                },
+                {
+                    q: "Est-ce rentable en 2025 ?",
+                    a: "Oui ! Avec les aides actuelles, le retour sur investissement est de 7-10 ans."
+                }
+            ],
+            2: [
+                {
+                    q: "Combien puis-je économiser ?",
+                    a: "Entre 300 et 600 € par an pour une installation de 3 kWc."
+                },
+                {
+                    q: "Impact environnemental ?",
+                    a: "Une installation de 3 kWc évite 1,5 tonne de CO2 par an."
+                }
+            ],
+            3: [
+                {
+                    q: "Que se passe-t-il la nuit ?",
+                    a: "Le réseau électrique prend automatiquement le relais."
+                },
+                {
+                    q: "Ai-je besoin d'un compteur spécial ?",
+                    a: "Oui, un compteur Linky installé gratuitement par Enedis."
+                }
+            ],
+            4: [
+                {
+                    q: "Impact sur la valeur immobilière ?",
+                    a: "Une installation solaire peut augmenter la valeur de 3-5%."
+                },
+                {
+                    q: "Y a-t-il des inconvénients fiscaux ?",
+                    a: "Non ! Revenus exonérés d'impôt pour les installations ≤3 kWc."
+                }
+            ],
+            5: [
+                {
+                    q: "Comment obtenir la prime ?",
+                    a: "Votre installateur RGE s'occupe des démarches automatiquement."
+                },
+                {
+                    q: "Autres aides disponibles ?",
+                    a: "Oui : aides régionales, éco-PTZ, et TVA réduite."
+                }
+            ],
+            6: [
+                {
+                    q: "Où trouver un installateur ?",
+                    a: "Sur france-renov.gouv.fr ou photovoltaique.info."
+                },
+                {
+                    q: "Coût total pour 3 kWc ?",
+                    a: "8000-12000 € avant aides, soit 5000-8000 € net."
+                }
+            ]
+        };
+
+        // Variables globales
+        let currentSlide = 1;
+        const totalSlides = 6;
+        let notesVisible = false;
+        let qaVisible = false;
+
+        // Éléments DOM
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const currentSpan = document.getElementById('current');
+        const speakerNotes = document.getElementById('speaker-notes');
+        const notesContent = document.getElementById('notes-content');
+        const notesToggle = document.getElementById('notes-toggle');
+        const qaSection = document.getElementById('qa-section');
+        const qaToggle = document.getElementById('qa-toggle');
+        const qaContentDiv = document.getElementById('qa-content');
+
+        // Fonctions de navigation
+        function showSlide(n) {
+            // Masquer toutes les slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // Afficher la slide courante
+            const currentSlideEl = document.querySelector(`[data-slide="${n}"]`);
+            currentSlideEl.classList.add('active');
+            
+            // Mettre à jour le compteur
+            currentSpan.textContent = n;
+            
+            // Mettre à jour les boutons
+            prevBtn.disabled = n === 1;
+            nextBtn.disabled = n === totalSlides;
+            
+            // Mettre à jour les notes
+            const speech = currentSlideEl.dataset.speech;
+            notesContent.textContent = speech;
+            
+            // Mettre à jour les Q&A
+            updateQA(n);
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        function updateQA(slideNum) {
+            const qa = qaData[slideNum] || [];
+            qaContentDiv.innerHTML = qa.map(item => `
+                <div class="qa-item">
+                    <div class="qa-question">Q: ${item.q}</div>
+                    <div class="qa-answer">R: ${item.a}</div>
+                </div>
+            `).join('');
+        }
+
+        // Gestion des toggles
+        function toggleNotes() {
+            notesVisible = !notesVisible;
+            speakerNotes.classList.toggle('show', notesVisible);
+        }
+
+        function toggleQA() {
+            qaVisible = !qaVisible;
+            qaSection.classList.toggle('show', qaVisible);
+        }
+
+        // Event listeners
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        notesToggle.addEventListener('click', toggleNotes);
+        qaToggle.addEventListener('click', toggleQA);
+
+        // Navigation clavier
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case 'ArrowLeft':
+                case 'ArrowUp':
+                    e.preventDefault();
+                    prevSlide();
+                    break;
+                case 'ArrowRight':
+                case 'ArrowDown':
+                case ' ':
+                    e.preventDefault();
+                    nextSlide();
+                    break;
+            }
+        });
+
+        // Fermer les panneaux en cliquant à l'extérieur
+        document.addEventListener('click', (e) => {
+            if (!qaSection.contains(e.target) && !qaToggle.contains(e.target)) {
+                qaVisible = false;
+                qaSection.classList.remove('show');
+            }
+        });
+
+        // Initialisation
+        showSlide(1);
+    </script>
+</body>
+</html>
